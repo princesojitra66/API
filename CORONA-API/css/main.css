@@ -1,0 +1,196 @@
+  /* Google Fonts import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: 1.1px;
+  }
+
+  /* Container width */
+  .container {
+    max-width: 960px;
+    width: 100%;
+  }
+
+  /* Buttons container */
+  .btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  button {
+    background: linear-gradient(135deg, #007ACC, #005999);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(0 122 204 / 0.3);
+    transition: background 0.3s ease, transform 0.15s ease;
+    user-select: none;
+  }
+  button:hover {
+    background: linear-gradient(135deg, #005999, #003f66);
+    transform: translateY(-2px);
+  }
+  button:active {
+    transform: translateY(1px);
+  }
+  button.saved {
+    background: linear-gradient(135deg, #0a9900, #067500);
+    box-shadow: 0 4px 10px rgb(10 153 0 / 0.4);
+  }
+
+  /* Inputs & selects */
+  input, select {
+    background: #222;
+    border: 1.5px solid #444;
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: #eee;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.25s ease;
+    margin-bottom: 15px;
+  }
+  input:focus, select:focus {
+    border-color: #007ACC;
+    outline: none;
+    box-shadow: 0 0 8px #007ACCaa;
+  }
+
+  /* Timeline list */
+  #timelineList {
+    background: #1c1c1c;
+    border-radius: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.6);
+  }
+  #timelineList div {
+    padding: 14px 18px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  #timelineList div:hover {
+    background-color: #007ACC33;
+  }
+  #timelineList div.selected {
+    background-color: #007ACC;
+    color: white;
+    font-weight: 600;
+  }
+  /* Scrollbar styling */
+  #timelineList::-webkit-scrollbar {
+    width: 10px;
+  }
+  #timelineList::-webkit-scrollbar-thumb {
+    background: #007ACC99;
+    border-radius: 8px;
+  }
+  #timelineList::-webkit-scrollbar-track {
+    background: #1c1c1c;
+  }
+
+  /* Stats section */
+  #globalStats {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin: 15px 0 25px 0;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 0.7);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a1eafb;
+  }
+  #globalStats .stat {
+    margin: 6px 0;
+  }
+
+  /* States table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.75);
+  }
+  thead tr {
+    background: #007ACC;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  tbody tr {
+    background: #1a1a1a;
+    transition: background-color 0.3s ease;
+  }
+  tbody tr:hover {
+    background-color: #007ACC33;
+  }
+
+  /* Favorite button in table */
+  tbody td button {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: background 0.3s ease;
+  }
+
+  /* No data message */
+  .no-data {
+    text-align: center;
+    color: #666;
+    margin: 30px 0;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    button {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .btn-group {
+      gap: 8px;
+    }
+    input, select {
+      max-width: 100%;
+    }
+    #timelineList {
+      max-height: 160px;
+    }
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COVID IndiaTimeline</title>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>COVID-19 India Timeline</h1>
+
+  <div class="btn-group">
+    <button id="reload" title="Reload timeline data">Reload Timeline</button>
+    <button id="showFavorites" title="Show saved favorite states">Show Favorites</button>
+    <button id="exportCsv" title="Export favorites as CSV file">Export Favorites CSV</button>
+  </div>
+
+  <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 10px;">
+    <input id="filterState" placeholder="Filter by state name" aria-label="Filter by state name" />
+    <select id="sort" aria-label="Sort states">
+      <option value="state">Sort by State (A-Z)</option>
+      <option value="confirmed-desc">Confirmed ↓</option>
+      <option value="confirmed-asc">Confirmed ↑</option>
+    </select>
+  </div>
+
+  <h3>Timeline Dates (<span id="timelineCount">--</span>)</h3>
+  <div id="timelineList" role="listbox" tabindex="0" aria-label="Timeline dates"></div>
+
+  <h3>Selected Date: <span id="selectedDate">--</span></h3>
+  <div id="globalStats" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="statesContainer" style="min-height:250px;" aria-live="polite" aria-atomic="true"></div>
+
+</div>
+
+<script src="./js/main.js">
+
+</script>
+
+</body>
+</html>
