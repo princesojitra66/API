@@ -1,0 +1,284 @@
+:root {
+  --color-text-day: #222;
+  --color-text-night: #e5e5e5;
+  --color-border-day: #444;
+  --color-border-night: #bbb;
+  --color-hover-day: #e3e3e3;
+  --color-hover-night: #333;
+  --color-active-day-bg: #222;
+  --color-active-day-text: #fafafa;
+  --color-active-night-bg: #ddd;
+  --color-active-night-text: #121212;
+}
+
+body.day {
+  background-image: url('https://paragonroad.com/wp-content/uploads/2019/09/bhagavadgita-6.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--color-text-day);
+  /* background-color: transparent !important; */
+}
+
+body.night {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--color-text-night);
+  background-color: transparent !important;
+}
+
+body.night::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.overlay{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  backdrop-filter: blur(6px);
+
+}
+
+header {
+  background: transparent;
+  color: #f0f0f0;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+
+body.night header {
+  background: #e5e5e5;
+  color: #121212;
+}
+
+#themeToggleBtn {
+  background: transparent;
+  border: 2px solid var(--color-border-day);
+  color: var(--color-border-day);
+  border-radius: 20px;
+  padding: 2px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+body.night #themeToggleBtn {
+  border-color: var(--color-border-night);
+  color: var(--color-border-night);
+}
+
+#themeToggleBtn:hover {
+  background: var(--color-border-day);
+  color: var(--color-text-day);
+}
+
+body.night #themeToggleBtn:hover {
+  background: var(--color-border-night);
+  color: #121212;
+}
+
+.container-fluid {
+  height: calc(100vh - 68px);
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Sidebar */
+nav.sidebar {
+  width: 280px;
+  padding: 1rem;
+  overflow-y: auto;
+  border-right: 3px solid var(--color-border-day);
+  color: #444;
+  background-color: rgba(255, 255, 255, 0.4); /* Transparent background */
+
+}
+
+body.night nav.sidebar {
+  border-right-color: var(--color-border-night);
+  color: var(--color-text-night);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar Content */
+nav.sidebar h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+nav.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav.sidebar li {
+  padding: 0.75rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+}
+
+body.night nav.sidebar li {
+  border-color: #444;
+  color: #ddd;
+}
+
+nav.sidebar li:hover {
+  background: var(--color-hover-day);
+}
+
+body.night nav.sidebar li:hover {
+  background: var(--color-hover-night);
+}
+
+nav.sidebar li.active {
+  background: var(--color-active-day-bg);
+  color: var(--color-active-day-text);
+  font-weight: 700;
+}
+
+body.night nav.sidebar li.active {
+  background: var(--color-active-night-bg);
+  color: var(--color-active-night-text);
+}
+
+/* Main Content */
+main.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: transparent !important;
+  color: inherit;
+}
+
+/* Chapter Title */
+.chapter-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Verse List */
+ul.verse-list {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 2px solid var(--color-border-day);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+body.night ul.verse-list {
+  border-color: var(--color-border-night);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+ul.verse-list li {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+}
+
+body.night ul.verse-list li {
+  border-color: #444;
+  color: #ccc;
+}
+
+ul.verse-list li:last-child {
+  border-bottom: none;
+}
+
+ul.verse-list li:hover {
+  background: var(--color-hover-day);
+}
+
+body.night ul.verse-list li:hover {
+  background: var(--color-hover-night);
+}
+
+ul.verse-list li.active {
+  background: var(--color-active-day-bg);
+  color: var(--color-active-day-text);
+}
+
+body.night ul.verse-list li.active {
+  background: var(--color-active-night-bg);
+  color: var(--color-active-night-text);
+}
+
+/* Verse Detail */
+.verse-detail {
+  border: 2px solid var(--color-border-day);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  color: var(--color-text-day);
+  background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+body.night .verse-detail {
+  border-color: var(--color-border-night);
+  color: var(--color-text-night);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.verse-detail .slok {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #111;
+}
+
+body.night .verse-detail .slok {
+  color: var(--color-text-night);
+}
+
+.verse-detail .translit {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+body.night .verse-detail .translit {
+  color: var(--color-border-night);
+}
+
+.verse-detail .translation {
+  line-height: 1.5;
+  color: #444;
+}
+
+body.night .verse-detail .translation {
+  color: #ccc;
+}
